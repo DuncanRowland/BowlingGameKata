@@ -21,9 +21,12 @@ class BowlingGameTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCanCreateGame() {
+        //Arrange
+        let g = Game()
+        //Act
+        XCTAssertFalse(g==nil, "Failed to create game object")
+        //Assert
     }
     
     func testPerformanceExample() {
