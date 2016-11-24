@@ -9,5 +9,7 @@
 import Foundation
 
 class Game {
-    var score: Int? { return nil }
+    private var _score: Int?
+    var score: Int? { return _score }
+    func roll(_ pins: Int) { _score=0 }
 }

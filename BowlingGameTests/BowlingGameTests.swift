@@ -30,6 +30,17 @@ class BowlingGameTests: XCTestCase {
         XCTAssertTrue(g.score==nil, "Score had value before game started")
     }
     
+    func testGutterGame() {
+        //Arrange
+        let g = Game()
+        //Act
+        for _ in 0...20 {
+            g.roll(0)
+        }
+        XCTAssertTrue(g.score==0, "Score not 0 for a gutter game")
+        //Assert
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
