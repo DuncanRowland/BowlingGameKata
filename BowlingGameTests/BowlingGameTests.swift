@@ -63,6 +63,18 @@ class BowlingGameTests: XCTestCase {
         XCTAssertEqual(g.score, 16, "Score should be 16 for this spare game (partial)")
     }
     
+    func testStrikeGame() {
+        //Arrange
+        //Act
+        g.roll(0)
+        g.roll(0)
+        g.roll(10)
+        g.roll(3)
+        g.roll(4)
+        //Assert
+        XCTAssertEqual(g.score, 24, "Score should be 24 for this stike game (partial)")
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
