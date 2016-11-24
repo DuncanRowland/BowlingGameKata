@@ -34,23 +34,33 @@ class BowlingGameTests: XCTestCase {
         //Arrange
         //Act
         //Assert
-        XCTAssertTrue(g.score==nil, "Score should not have a value before game started")
+        XCTAssertTrue(g.score==0, "Score should be 0 before game starts")
     }
     
     func testGutterGame() {
         //Arrange
         //Act
         rollMany(20,0)
-        XCTAssertEqual(g.score, 0, "Score should be 0 for a gutter game")
         //Assert
+        XCTAssertEqual(g.score, 0, "Score should be 0 for a gutter game")
     }
     
     func testAllOnesGame() {
         //Arrange
         //Act
         rollMany(20,1)
-        XCTAssertEqual(g.score, 20, "Score should be 20 for an 'all ones' game")
         //Assert
+        XCTAssertEqual(g.score, 20, "Score should be 20 for an 'all ones' game")
+    }
+    
+    func testSpareGame() {
+        //Arrange
+        //Act
+        g.roll(5)
+        g.roll(5)
+        g.roll(3)
+        //Assert
+        XCTAssertEqual(g.score, 16, "Score should be 16 for this spare game (partial)")
     }
     
     func testPerformanceExample() {
