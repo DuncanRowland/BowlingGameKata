@@ -21,12 +21,13 @@ class BowlingGameTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCanCreateGame() {
+    func testNoScoreBeforeGameStarts() {
         //Arrange
         let g = Game()
         //Act
-        XCTAssertFalse(g==nil, "Failed to create game object")
+        
         //Assert
+        XCTAssertTrue(g.score==nil, "Score had value before game started")
     }
     
     func testPerformanceExample() {

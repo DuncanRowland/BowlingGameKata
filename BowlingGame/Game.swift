@@ -9,4 +9,5 @@
 import Foundation
 
 class Game {
+    var score: Int? { return nil }
 }
