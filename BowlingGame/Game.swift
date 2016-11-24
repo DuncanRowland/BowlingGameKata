@@ -14,11 +14,16 @@ class Game {
     private var _ballId: Int = 0
     public var score: Int = 0
     
+    func isFirstBallOfFrame()->Bool { return _ballId%2 == 0 }
+    func isStrike(_ pins: Int)->Bool { return pins == 10 }
+    func isSpare(_ pins: Int)->Bool { return (pins + _lastPins) == 10 }
+    func isNotLastFrame()->Bool { return _ballId<18 }
+    
     func roll(_ pins: Int) {
         score += pins * _multiplier[0]
         
-        if _ballId%2 == 0 { //possible stike (i.e. first balls)
-            if pins == 10 && _ballId<18 {
+        if isFirstBallOfFrame() { //possible stike
+            if isStrike(pins) && isNotLastFrame() {
                 _multiplier[0]=_multiplier[1]+1
                 _multiplier[1]=2
                 _ballId += 1
@@ -27,7 +32,7 @@ class Game {
                 _multiplier[1]=1
             }
         } else { //not a possible stike (i.e. so a possible spare)
-            if (pins + _lastPins) == 10 && _ballId<18 {
+            if isSpare(pins) && isNotLastFrame() {
                 _multiplier[0]=2
                 _multiplier[1]=1
             } else {
