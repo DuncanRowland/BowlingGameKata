@@ -56,6 +56,8 @@ class BowlingGameTests: XCTestCase {
     func testSpareGame() {
         //Arrange
         //Act
+        g.roll(0)
+        g.roll(0)
         g.roll(5)
         g.roll(5)
         g.roll(3)
@@ -71,16 +73,18 @@ class BowlingGameTests: XCTestCase {
         g.roll(10)
         g.roll(3)
         g.roll(4)
+        g.roll(1)
+        g.roll(1)
         //Assert
-        XCTAssertEqual(g.score, 24, "Score should be 24 for this stike game (partial)")
+        XCTAssertEqual(g.score, 26, "Score should be 26 for this stike game (partial)")
     }
 
     func testPerfectGame() {
         //Arrange
         //Act
-        rollMany(22,10)
+        rollMany(12,10)
         //Assert
-        XCTAssertEqual(g.score, 400, "Perfect games scores 400")
+        XCTAssertEqual(g.score, 300, "Perfect games scores 300")
     }
     
     func testPerformanceExample() {

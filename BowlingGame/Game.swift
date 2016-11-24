@@ -10,29 +10,32 @@ import Foundation
 
 class Game {
     private var _lastPins: Int = 0
-    private var _possibleStrike: Bool = true
-    private var _countsTwiceCounter: Int = 0
-    private var _ballNum: Int = 1
+    private var _multiplier: [Int] = [1,1]
+    private var _ballId: Int = 0
     public var score: Int = 0
     
     func roll(_ pins: Int) {
-        score += pins
-        if _ballNum<20 && _countsTwiceCounter > 0 {
-            score += pins
-            _countsTwiceCounter -= 1
-        }
-        if _possibleStrike {
-            if pins == 10 {
-                _countsTwiceCounter = 2
-                _possibleStrike = !_possibleStrike
+        score += pins * _multiplier[0]
+        
+        if _ballId%2 == 0 { //possible stike (i.e. first balls)
+            if pins == 10 && _ballId<18 {
+                _multiplier[0]=_multiplier[1]+1
+                _multiplier[1]=2
+                _ballId += 1
+            } else {
+                _multiplier[0]=_multiplier[1]
+                _multiplier[1]=1
             }
         } else { //not a possible stike (i.e. so a possible spare)
-            if (pins + _lastPins) == 10 {
-                _countsTwiceCounter = 1
+            if (pins + _lastPins) == 10 && _ballId<18 {
+                _multiplier[0]=2
+                _multiplier[1]=1
+            } else {
+                _multiplier[0]=_multiplier[1]
+                _multiplier[1]=1
             }
         }
-        _possibleStrike = !_possibleStrike
         _lastPins = pins
-        _ballNum += 1
+        _ballId += 1
     }
 }
