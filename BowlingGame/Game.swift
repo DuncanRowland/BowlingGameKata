@@ -11,5 +11,11 @@ import Foundation
 class Game {
     private var _score: Int?
     var score: Int? { return _score }
-    func roll(_ pins: Int) { _score=0 }
+    func roll(_ pins: Int) {
+        if _score == nil {
+           _score = pins
+        } else {
+           _score! += pins
+        }
+    }
 }
