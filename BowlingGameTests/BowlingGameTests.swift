@@ -11,9 +11,12 @@ import XCTest
 
 class BowlingGameTests: XCTestCase {
     
+    private var g: Game = Game()
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        g = Game()
     }
     
     override func tearDown() {
@@ -21,33 +24,31 @@ class BowlingGameTests: XCTestCase {
         super.tearDown()
     }
     
+    func rollMany(_ n: Int, _ pins: Int) {
+        for _ in 0..<n {
+            g.roll(pins)
+        }
+    }
+    
     func testNoScoreBeforeGameStarts() {
         //Arrange
-        let g = Game()
         //Act
-        
         //Assert
         XCTAssertTrue(g.score==nil, "Score should not have a value before game started")
     }
     
     func testGutterGame() {
         //Arrange
-        let g = Game()
         //Act
-        for _ in 0..<20 {
-            g.roll(0)
-        }
+        rollMany(20,0)
         XCTAssertEqual(g.score, 0, "Score should be 0 for a gutter game")
         //Assert
     }
     
     func testAllOnesGame() {
         //Arrange
-        let g = Game()
         //Act
-        for _ in 0..<20 {
-            g.roll(1)
-        }
+        rollMany(20,1)
         XCTAssertEqual(g.score, 20, "Score should be 20 for an 'all ones' game")
         //Assert
     }
