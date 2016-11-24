@@ -9,14 +9,15 @@
 import Foundation
 
 class Game {
-    private var _lastpins: Int = 0
+    private var _lastPins: Int = 0
     private var _possibleStrike: Bool = true
     private var _countsTwiceCounter: Int = 0
+    private var _ballNum: Int = 1
     public var score: Int = 0
     
     func roll(_ pins: Int) {
         score += pins
-        if _countsTwiceCounter > 0 {
+        if _ballNum<20 && _countsTwiceCounter > 0 {
             score += pins
             _countsTwiceCounter -= 1
         }
@@ -26,11 +27,12 @@ class Game {
                 _possibleStrike = !_possibleStrike
             }
         } else { //not a possible stike (i.e. so a possible spare)
-            if (pins + _lastpins) == 10 {
+            if (pins + _lastPins) == 10 {
                 _countsTwiceCounter = 1
             }
         }
         _possibleStrike = !_possibleStrike
-        _lastpins = pins
+        _lastPins = pins
+        _ballNum += 1
     }
 }

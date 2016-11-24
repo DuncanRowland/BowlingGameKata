@@ -74,6 +74,14 @@ class BowlingGameTests: XCTestCase {
         //Assert
         XCTAssertEqual(g.score, 24, "Score should be 24 for this stike game (partial)")
     }
+
+    func testPerfectGame() {
+        //Arrange
+        //Act
+        rollMany(22,10)
+        //Assert
+        XCTAssertEqual(g.score, 400, "Perfect games scores 400")
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
