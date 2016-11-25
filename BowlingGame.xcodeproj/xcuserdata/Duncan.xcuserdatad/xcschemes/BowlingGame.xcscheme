@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB488441DE7160000A713E0"
+               BlueprintIdentifier = "AEB596B91DE820D500B24F7F"
                BuildableName = "BowlingGame.app"
                BlueprintName = "BowlingGame"
                ReferencedContainer = "container:BowlingGame.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB488581DE7160000A713E0"
+               BlueprintIdentifier = "AEB596D01DE820D600B24F7F"
                BuildableName = "BowlingGameTests.xctest"
                BlueprintName = "BowlingGameTests"
                ReferencedContainer = "container:BowlingGame.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB488631DE7160000A713E0"
+               BlueprintIdentifier = "AEB596DB1DE820D600B24F7F"
                BuildableName = "BowlingGameUITests.xctest"
                BlueprintName = "BowlingGameUITests"
                ReferencedContainer = "container:BowlingGame.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB488441DE7160000A713E0"
+            BlueprintIdentifier = "AEB596B91DE820D500B24F7F"
             BuildableName = "BowlingGame.app"
             BlueprintName = "BowlingGame"
             ReferencedContainer = "container:BowlingGame.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB488441DE7160000A713E0"
+            BlueprintIdentifier = "AEB596B91DE820D500B24F7F"
             BuildableName = "BowlingGame.app"
             BlueprintName = "BowlingGame"
             ReferencedContainer = "container:BowlingGame.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB488441DE7160000A713E0"
+            BlueprintIdentifier = "AEB596B91DE820D500B24F7F"
             BuildableName = "BowlingGame.app"
             BlueprintName = "BowlingGame"
             ReferencedContainer = "container:BowlingGame.xcodeproj">

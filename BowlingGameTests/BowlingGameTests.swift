@@ -78,7 +78,7 @@ class BowlingGameTests: XCTestCase {
         //Assert
         XCTAssertEqual(g.score, 26, "Score should be 26 for this stike game (partial)")
     }
-
+    
     func testPerfectGame() {
         //Arrange
         //Act
